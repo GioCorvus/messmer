@@ -1,0 +1,393 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Minimum height to fill the viewport */
+    position: relative;
+    background-image: url('img/bg.png'); /* Background image */
+    background-size: cover;
+    background-attachment: fixed; /* Background is fixed */
+    background-position: center;
+    color: white; /* Text color */
+    padding-top: 20px;
+}
+
+.background {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+/* Dark overlay */
+.background::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    z-index: -1; /* Ensure it's behind the content */
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px; /* Make the border rounded */
+    border: 2px solid white; /* Add a white border */
+    background-color: transparent; /* Set a transparent background */
+    display: inline-block;
+    width: 100px;
+    transition: background-color 0.3s ease-in-out, 
+                box-shadow 0.3s ease-in-out, 
+                transform 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly visible white background on hover */
+    transform: scale(1.1); /* Breathe effect on hover */
+}
+
+.character-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto; /* Adjust as needed */
+}
+
+.character-image img {
+    width: 20%; /* Adjust as needed */
+    border-radius: 20px;
+    height: auto;
+    display: none; /* Hide all images by default */
+    margin: 0; /* Remove margin */
+}
+
+.character-image img.active {
+    display: block; /* Only show the active image */
+}
+
+.description {
+    font-size: 1.1em;
+    margin: 10px 0;
+    position: relative; /* Above the overlay */
+    z-index: 2;
+}
+
+/*BACKGROUND*/
+
+.background h1 {
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+.background p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/*INFO*/
+
+.text-container {
+    max-width: 70%; /* Set the maximum width */
+    margin: 0 auto; /* Center it horizontally */
+    padding: 10px; /* Optional: Add some padding */
+}
+
+/*ANIMACION FLECHAS*/
+.arrow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow {
+    font-size: 2em;
+    cursor: pointer;
+    margin: 0 20px;
+    transition:
+        background-color 0.3s ease-in-out, 
+        box-shadow 0.3s ease-in-out, 
+        transform 0.3s ease-in-out;
+}
+
+.arrow:hover {
+    transform: scale(1.5); /* Breathe effect on hover */
+}
+
+.arrow:hover {
+    color: #ddd;
+}
+
+/*STATS*/
+
+/* D&D Stats Section */
+.stats-section {
+    text-align: center;
+}
+
+.stats-section img {
+    width: 100%;
+    max-width: 400px; /* Adjust image max-width as needed */
+    border-radius: 10px;
+}
+
+.stats-section h2 {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.stats-section p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #fff;
+}
+
+/* Alignment Section */
+.alignment-section {
+    text-align: center;
+}
+
+.alignment-section img {
+    width: 100%;
+    max-width: 400px; /* Adjust image max-width as needed */
+    border-radius: 10px;
+}
+
+.alignment-section h2 {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.alignment-section p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #fff;
+}
+
+/* Skills Section */
+/* Stats Section */
+.stats-section {
+    text-align: center;
+}
+
+.stats-section img {
+    max-width: 200px; /* Adjust image max-width as needed */
+    border-radius: 10px;
+}
+
+.stats-section h2 {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.stats-section p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #fff;
+}
+
+/* Stats Details Section */
+.stats-details-section {
+    text-align: center;
+}
+
+.stats-details-section h2 {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.stats-details-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.stats-details-section li {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #fff;
+}
+
+/* Skills Section */
+.skills-section {
+    text-align: center;
+}
+
+.skills-section img {
+    width: 100%;
+    max-width: 400px; /* Adjust image max-width as needed */
+    border-radius: 10px;
+}
+
+.skills-section h2 {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.skills-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-section li {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #fff;
+}
+
+.icon{
+    max-width: 100px;
+}
+
+/* FOOTER*/
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    text-align: center;
+    position: fixed; /* Fixed position at the bottom */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+    z-index: 2; /* Ensuring it's above other elements */
+}
+
+.push {
+    height: 50px; /* Same height as your footer */
+}
+
+.social-media {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5em;
+}
+
+.social-media:hover {
+    color: #ddd;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: white;
+    margin: 20px auto; /* Center the line horizontally */
+    width: 70%; /* Set the width to 70% */
+}
+
+/*SCROLLBAR/
+
+/* Scroll bar styles */
+
+/* WebKit Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #333; /* Dark color for the thumb */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #555; /* Slightly lighter color for the track */
+}
+
+/* Firefox Scrollbar */
+/* Note: Firefox does not support styling of scrollbars at the moment (as of January 2022) */
+
+/* General Scrollbar Styles */
+/* Add these styles for compatibility with other browsers */
+
+/* Track */
+body::-webkit-scrollbar-track {
+    background-color: #555;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+    background-color: #333;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #111;
+}
+
+
+/* Media query for tablets (portrait) */
+@media only screen and (max-width: 768px) {
+    nav ul {
+        display: block; /* Stack the navigation links vertically */
+    }
+
+    nav ul li {
+        display: block; /* Ensure each li is a block for vertical stacking */
+        margin: 15px auto; /* Increase margin for more space and center align */
+        text-align: center; /* Center the text/link */
+    }
+
+    nav a {
+        display: inline-block; /* Make sure anchor tags are inline-block */
+        width: 50%; /* Allow width to fit content */
+        margin: 5px; /* Add some margin for spacing */
+        padding: 10px 15px; /* Adjust padding as needed */
+    }
+
+    .character-image img {
+        width: 70%; /* Adjust the width as needed for tablets */
+        margin: 10px auto; /* Center the image with auto margins */
+
+    }
+
+    .arrow {
+        font-size: 1.5em; /* Adjust the size of the arrows for tablets */
+        margin: 0 10px; /* Adjust the margin for better spacing */
+    }
+
+    .text-container {
+        max-width: 80%; /* Adjust the maximum width as needed for tablets */
+    }
+
+}
+
+/* New Media Query for Smartphones */
+@media only screen and (max-width: 600px) {
+    .arrow {
+        font-size: 1.5em; /* Adjust the font size for small screens */
+    }
+
+    .character-image img {
+        width: 70%; /* Adjust the width for smaller devices */
+    }
+
+
+    .text-container {
+        max-width: 90%; /* Increase the maximum width for better readability on small screens */
+    }
+
+}
